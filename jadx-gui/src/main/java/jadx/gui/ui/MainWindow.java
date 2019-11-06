@@ -134,6 +134,7 @@ public class MainWindow extends JFrame {
 		FontUtils.registerBundledFonts();
 		initUI();
 		initMenuAndToolbar();
+		UiUtils.setTaskbarIcon();
 		UiUtils.setWindowIcons(this);
 		loadSettings();
 		checkForUpdate();

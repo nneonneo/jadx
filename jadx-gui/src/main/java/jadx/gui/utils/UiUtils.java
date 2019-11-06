@@ -180,6 +180,16 @@ public class UiUtils {
 		window.setIconImages(icons);
 	}
 
+	public static void setTaskbarIcon() {
+		if (Taskbar.isTaskbarSupported()) {
+			Taskbar taskbar = Taskbar.getTaskbar();
+			if (taskbar.isSupported(Taskbar.Feature.ICON_IMAGE)) {
+				Image iconImage = UiUtils.openImage("/logos/jadx-logo.png");
+				taskbar.setIconImage(iconImage);
+			}
+		}
+	}
+
 	public static final int CTRL_BNT_KEY = getCtrlButton();
 
 	@MagicConstant(flagsFromClass = InputEvent.class)
